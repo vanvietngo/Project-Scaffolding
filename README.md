@@ -227,7 +227,7 @@ Remaining screenshots can be checked in the screenshot folder.
 
 ## YouTube Demo
 
-Link to YouTube Demo Video -> (https://youtu.be/jysGOhOFHTs)
+Link to YouTube Demo Video -> (https://youtu.be/jljT1ZBunSU)
 
 ## License
 
