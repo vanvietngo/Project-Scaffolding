@@ -44,12 +44,6 @@ ssh-keygen -t rsa
 
 ![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/ssh-keygen.PNG)
 
-* Change to branch "hello-github-actions"
-
-```sh
- git checkout hello-github-actions
-```
-
 * Project Scaffolding ( files):
 
 | Plugin | README |
@@ -62,8 +56,8 @@ ssh-keygen -t rsa
  Create a virtual environment for your application.
 
 ```sh
-python3 -m venv ~/.myrepo
-source ~/.myrepo/bin/activate
+python3 -m venv ~/.venv
+source ~/.venv/bin/activate
 ```
 
 * Run `make all` which will install, lint, and test code
@@ -72,7 +66,7 @@ source ~/.myrepo/bin/activate
 make all
 ```
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%202%20-%20test%20passed%20after%20make%20all.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/test%20passed%20make%20all.PNG)
 
 * Next set up Github Actions in your repo doign this :
 
@@ -85,31 +79,15 @@ vim .github/workflows/pythonapp.yml
 
 > Go to GItHUb Actions and you will see the Workflow in action!!!
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%203%20-%20github%20actions%20workflow%20build%20-%20OK.png)
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%203a%20-%20githubactions-workflow-created-summary.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/github-workflow.PNG)
 
 Note: it was  created a simple GitHUB Action in the branch  which automates the lint  and test of our app.
 Note: You can add the GitHub Actions badge to you README.md ( it's a good practice to do that)
 
-* (OPTIONAL but HIGHLY Recommended) - Also you can add a CI pipeline with CircleCI.
 
-> Open your account in CircleCI , add your repo and copy the `config.yml` of directory `.circleci`
-
-```sh
-ls -lasth .circleci/config.yml
-```
-
-> Note:  there is an article that Noah Gift wrote on the topic ( https://circleci.com/blog/increase-reliability-in-data-science-and-machine-learning-projects-with-circleci/) 
 
 ## Second : CI/CD Pipeline with AZURE DEVOPS
-
-* Return to the `main` branch
-
-```sh
-git checkout main
-git branch
-```
 
 ### Azure DevOps Pipelines Architectural Diagram
 
