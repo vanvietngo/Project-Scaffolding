@@ -25,5 +25,5 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-     -X POST http://localhost:$PORT/predict 
+     -X POST https://azuredevops-xpander:$PORT/predict 
      #your application name <yourappname>goes here
