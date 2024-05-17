@@ -92,7 +92,7 @@ Note: You can add the GitHub Actions badge to you README.md ( it's a good practi
 ### Azure DevOps Pipelines Architectural Diagram
 
 * Architectural Diagram -
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/cd-diagram.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/architechter%20digram.PNG)
 
 * Go to Azure Devops page  and sign in it, create a new Project inside your organization ( if you don't have an organization create one first).
 
@@ -108,7 +108,7 @@ Note3: the ServiceConnection ID is the number before the name `AZServiceConnecti
 az webapp up -n <name of webapp> --location southcentralus --sku B1
 ```
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%204a%20-%20webapp%20created%20.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/webapp%20created.PNG)
 
 >Note 1: Your service URL  will be something like this : `https://<name of webapp>.azurewebsites.net/`
 >Note 2: If you don't choose the sku , the default will be `P1V2(Premium V2 Small)` ( brings more costs associated)
@@ -117,17 +117,17 @@ az webapp up -n <name of webapp> --location southcentralus --sku B1
 
 * In  your new Project in Azure DevOps, go to Pipelines -->New Pipeline --> GitHub --> Select Your Repo --> select `an Existing YAML file`
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%205%20-%20creating%20azure%20pipeline.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/create%20azure%20pipeline.PNG)
 
 > Choose the `main` branch and the file named `azure-pipelines.yml` as is showed on the figure below
 > Update the `azure-pipelines.yml` with the name of your webapp and your Service connection point ( Check YouTube video for a detailed explanation)
 > Modifications are at variables webAppName & environmentName too !!!
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%205a%20-%20existing%20yaml%20file.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/existing%20yaml%20file.PNG)
 
 * Choose Run Pipeline and your Azure DevOps Pipeline is going to start to be deployed with all his stages ( in this case 2: Build & deploy)
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%206%20-%20azure%20devops%20pipeline%20executing.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/azure%20devops%20pipeline%20building.PNG)
 
 * Perform a cosmetic change to your app.py , so you can see your CI/CD pipelines in action on Azure DevOps ( CD) & GitHub Actions (CI)
 
@@ -149,20 +149,20 @@ and then perform a quick lint and push the changes to your repo:
 make lint
 git add .
 git commit -m "app.py updated"
-git push origin main
+git push origin master
 ```
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%207%20-%20azure%20devops%20pipeline%20integrated%20to%20repo.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/azure%20pipeline%20integrated.PNG)
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%207b%20-%20ci%20pipeline%20main.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/github-workflow.PNG)
 
 * Check that the webapp is running opening his URL, example:
 
 ```sh
-https://jc-my-ml-app.azurewebsites.net/
+https://azuredevops-xpander.azurewebsites.net/
 ```
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%208%20-%20webapp%20running.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/webapp%20running.PNG)
 
 * Update the file `make_predict_azure_app.sh` with the webapp service end point
 
@@ -183,11 +183,11 @@ Port: 443
 {"prediction":[20.35373177134412]}
 ```
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%209%20-%20make%20azure%20prediction.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/make%20azure%20predict.PNG)
 
 * Logging: Check on webapp log tail `az webapp log tail` , the answer like this:
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%2010%20-%20webapp%20log%20tail.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/webapp%20log.PNG)
 
 * Execute a Load Testing , running Locust .
 
@@ -202,13 +202,10 @@ Port: 443
 > This is good to know how good is your webapp and your plan to manage the requests. So you can decide to scale up the plan service of your webapp for example.
 -> Locust could generate a stats report.
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%20locust%20-%20chart%201.png)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/lotust%20chart.PNG)
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%20locust%20-%20chart%202.png>)
+![alt text](https://github.com/vanvietngo/Project-Scaffolding/blob/master/screenshot/lotust%20chart%202.PNG)
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%20locust%20-%20chart%203.png)
-
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%20locust%20-%20report.png)
 
 Remaining screenshots can be checked in the screenshot folder.
 
