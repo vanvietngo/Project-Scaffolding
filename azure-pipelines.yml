@@ -6,7 +6,7 @@
 trigger:
 - master
 
-pool: poolazuredevops
+pool: poolagentself
 
 steps:
 - script: echo Hello, world!
