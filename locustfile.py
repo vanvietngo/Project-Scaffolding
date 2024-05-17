@@ -1,6 +1,9 @@
-from locust import HttpUser, task
+import time
+from locust import HttpUser, task, between
 
-class HelloWorldUser(HttpUser):
+class WebsiteTestUser(HttpUser):
+    wait_time = between(0.5, 3.0)
+
     def on_start(self):
         """ on_start is called when a Locust start before any task is scheduled """
         pass
@@ -11,11 +14,11 @@ class HelloWorldUser(HttpUser):
 
     @task(1)
     def index(self):
-        self.client.get("https://luffyyyy.azurewebsites.net/")
+        self.client.get("https://azuredevops-xpander.azurewebsites.net/")
 
     @task(2)
     def predict(self):
-        self.client.post("https://luffyyyy.azurewebsites.net/predict",{
+        self.client.post("/predict",{
        "CHAS":{
           "0":0
        },
